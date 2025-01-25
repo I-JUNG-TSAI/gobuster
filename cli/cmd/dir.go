@@ -169,8 +169,8 @@ func init() {
 	if err := addCommonHTTPOptions(cmdDir); err != nil {
 		log.Fatalf("%v", err)
 	}
-	cmdDir.Flags().StringP("status-codes", "s", "", "Positive status codes (will be overwritten with status-codes-blacklist if set). Can also handle ranges like 200,300-400,404.")
-	cmdDir.Flags().StringP("status-codes-blacklist", "b", "404", "Negative status codes (will override status-codes if set). Can also handle ranges like 200,300-400,404.")
+	cmdDir.Flags().StringP("status-codes", "s", "200,204,301,302,307,401,403", "Positive status codes (will be overwritten with status-codes-blacklist if set). Can also handle ranges like 200,300-400,404.")
+	cmdDir.Flags().StringP("status-codes-blacklist", "b", "", "Negative status codes (will override status-codes if set). Can also handle ranges like 200,300-400,404.")
 	cmdDir.Flags().StringP("extensions", "x", "", "File extension(s) to search for")
 	cmdDir.Flags().StringP("extensions-file", "X", "", "Read file extension(s) to search from the file")
 	cmdDir.Flags().BoolP("expanded", "e", false, "Expanded mode, print full URLs")
